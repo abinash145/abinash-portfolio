@@ -2,20 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: #2d2e32;
+  background-color: #f9f9f9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+a {
+  color: #767676;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.23s;
+  background: transparent;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+.container {
+  margin: auto;
+}
+@keyframes movediv {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }
+#profileImage {
+  background-image: url("/images/profileImage2.jpg");
+  background-position: 56% 84%;
+  background-size: 600px;
+  background-repeat: no-repeat;
+  animation: movediv 5s infinite;
+}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  h3 {
+    @apply text-[#2d2e32] font-bold text-2xl leading-[1.] lg:text-center bg-transparent;
+  }
+  h4 {
+    @apply text-[#147efb] font-bold text-base leading-[1.4] lg:text-center bg-transparent;
+  }
+  p {
+    @apply text-[#767676] font-medium text-base leading-[1.6] lg:text-center bg-transparent;
+  }
+  section {
+    @apply py-20;
+  }
 }
